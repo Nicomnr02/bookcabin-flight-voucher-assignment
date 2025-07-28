@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  sqlite-db:
+    image: nouchka/sqlite3
+    container_name: sqlite-db
+    volumes:
+      - ./data:/data
+      - ./migrations:/migrations 
+    entrypoint: /bin/sh -c "sqlite3 /data/flight.db < /migrations/000001_create_vouchers_table.up.sql && tail -f /dev/null"
+  #   entrypoint: /bin/sh -c "sqlite3 /data/flight.db 'CREATE TABLE IF NOT EXISTS vouchers (id INTEGER PRIMARY KEY AUTOINCREMENT, crew_name TEXT, crew_id TEXT, flight_number TEXT, flight_date TEXT, aircraft_type TEXT, seat1 TEXT, seat2 TEXT, seat3 TEXT, created_at TEXT);' && tail -f /dev/null"
+
+  sqlite-web:
+    image: coleifer/sqlite-web
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+    environment:
+      - SQLITE_DATABASE=/data/flight.db
+    depends_on:
+      - sqlite-db
+    command: ["sqlite_web", "/data/flight.db", "--host", "0.0.0.0", "--port", "8080"]
