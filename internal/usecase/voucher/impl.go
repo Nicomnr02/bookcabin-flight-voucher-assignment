@@ -8,6 +8,7 @@ import (
 
 type VoucherUsecase interface {
 	Generate(c context.Context, request voucherdto.GenerateRequest) (voucherdto.GenerateResponse, error)
+	Check(c context.Context, request voucherdto.CheckRequest) (voucherdto.CheckResponse, error)
 }
 
 type VoucherUsecaseImpl struct {

@@ -13,7 +13,20 @@ func (handler *VoucherHandlerImpl) Router() {
 	voucher.Post("/generate", handler.generate)
 }
 
-func (handler *VoucherHandlerImpl) check(ctx *fiber.Ctx) error { return nil }
+func (handler *VoucherHandlerImpl) check(ctx *fiber.Ctx) error {
+	var request voucherdto.CheckRequest
+	err := ctx.BodyParser(&request)
+	if err != nil {
+		return exception.ErrorHandler(ctx, exception.ErrInternalServer("Failed to check seats"))
+	}
+
+	response, err := handler.VoucherUC.Check(ctx.Context(), request)
+	if err != nil {
+		return exception.ErrorHandler(ctx, err)
+	}
+
+	return exception.Response(ctx, fiber.StatusOK, response)
+}
 
 func (handler *VoucherHandlerImpl) generate(ctx *fiber.Ctx) error {
 	var request voucherdto.GenerateRequest

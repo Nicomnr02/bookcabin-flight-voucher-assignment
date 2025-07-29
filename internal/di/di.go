@@ -10,7 +10,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// Depedency Injection
 func Run(fiber *fiber.App, SQLite *sql.DB) {
 	voucherRP := voucherrepository.New(SQLite)
 	voucherUC := voucherusecase.New(voucherRP)
