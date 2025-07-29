@@ -17,7 +17,7 @@ func (handler *VoucherHandlerImpl) check(ctx *fiber.Ctx) error {
 	var request voucherdto.CheckRequest
 	err := ctx.BodyParser(&request)
 	if err != nil {
-		return exception.ErrorHandler(ctx, exception.ErrInternalServer("Failed to check seats"))
+		return exception.ErrorHandler(ctx, exception.ErrInternalServer("Failed to check vouchers"))
 	}
 
 	response, err := handler.VoucherUC.Check(ctx.Context(), request)
@@ -32,7 +32,7 @@ func (handler *VoucherHandlerImpl) generate(ctx *fiber.Ctx) error {
 	var request voucherdto.GenerateRequest
 	err := ctx.BodyParser(&request)
 	if err != nil {
-		return exception.ErrorHandler(ctx, exception.ErrInternalServer("Failed to generate seats"))
+		return exception.ErrorHandler(ctx, exception.ErrInternalServer("Failed to generate vouchers"))
 	}
 
 	response, err := handler.VoucherUC.Generate(ctx.Context(), request)

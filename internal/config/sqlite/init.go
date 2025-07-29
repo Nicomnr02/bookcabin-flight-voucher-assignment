@@ -8,8 +8,13 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func Init() *sql.DB {
-	DB, err := sql.Open("sqlite3", "../data/flight.db")
+func Init(debug bool) *sql.DB {
+	dbPath := "./data/flight.db"
+	if debug {
+		dbPath = "." + dbPath
+	}
+
+	DB, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
 		log.Fatal(err)
 	}

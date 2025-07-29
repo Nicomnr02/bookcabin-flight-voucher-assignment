@@ -8,6 +8,6 @@ import (
 
 func main() {
 	fiber := fiberconfig.Init()
-	SQLite := sqliteconfig.Init()
+	SQLite := sqliteconfig.Init(false)
 	di.Run(fiber, SQLite)
 }
