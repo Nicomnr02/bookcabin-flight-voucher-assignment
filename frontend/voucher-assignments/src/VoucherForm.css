@@ -1,0 +1,90 @@
+.voucher-container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #f7faff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.voucher-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1d4ed8;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+}
+
+.generate-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.generate-button:hover {
+  background-color: #1e40af;
+}
+
+.generate-button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.message {
+  margin-top: 16px;
+  font-weight: bold;
+  color: #374151;
+  text-align: center;
+}
+
+.seat-list {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.seat-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.seat-list li {
+  display: inline-block;
+  margin: 6px;
+  padding: 6px 12px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-radius: 6px;
+  font-weight: 500;
+}
