@@ -37,6 +37,7 @@ func TestVoucherUsecaseImpl_Check(t *testing.T) {
 			},
 			wantErr: true,
 			setMock: func() {
+				// Only example
 				// voucherRP.On("GetVouchers", voucherdomain.Voucher{FlightDate: "20-20-2001"}).Return(nil, nil)
 			},
 		},
