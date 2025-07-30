@@ -38,7 +38,7 @@ depending on aircraft type.
   go mod tidy
 ```
 
-4. Init SQLite GUI (Optional)
+4. Init SQLite GUI (Optional, Docker ON)
 
 ```bash
   make run-sqlite
