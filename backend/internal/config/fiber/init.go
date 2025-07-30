@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 func Init() *fiber.App {
@@ -15,6 +16,8 @@ func Init() *fiber.App {
 		JSONDecoder:           json.Unmarshal,
 		BodyLimit:             (40 * 1024 * 1024),
 	})
+
+	app.Use(cors.New())
 
 	return app
 }
