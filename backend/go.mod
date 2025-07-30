@@ -5,6 +5,7 @@ go 1.24.3
 require (
 	github.com/gofiber/fiber/v2 v2.52.9
 	github.com/mattn/go-sqlite3 v1.14.29
+	github.com/rs/zerolog v1.34.0
 )
 
 require (

@@ -3,6 +3,7 @@ package voucherhandler
 import (
 	voucherdto "bookcabin-flight-voucher-assignment/internal/dto/voucher"
 	"bookcabin-flight-voucher-assignment/internal/exception"
+	"bookcabin-flight-voucher-assignment/pkg/logger"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -25,6 +26,7 @@ func (handler *VoucherHandlerImpl) check(ctx *fiber.Ctx) error {
 		return exception.ErrorHandler(ctx, err)
 	}
 
+	logger.Log.Info().Interface("payload", request).Msg("Voucher Checked successfully")
 	return exception.Response(ctx, fiber.StatusOK, response)
 }
 
@@ -40,5 +42,6 @@ func (handler *VoucherHandlerImpl) generate(ctx *fiber.Ctx) error {
 		return exception.ErrorHandler(ctx, err)
 	}
 
+	logger.Log.Info().Interface("payload", request).Msg("Voucher Generated successfully")
 	return exception.Response(ctx, fiber.StatusCreated, response)
 }
