@@ -69,11 +69,11 @@ Start the Web Application
   npm run dev
 ```
 
-Go the Web Application
+Go to the Web Application
 
 -  [http://127.0.0.0:5173](http://127.0.0.0:5173)
 
-See the SQLite GUI
+See the SQLite GUI (Optional)
 
 -  [http://127.0.0.0:8080](http://127.0.0.0:8080)
 
