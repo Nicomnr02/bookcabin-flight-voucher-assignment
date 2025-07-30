@@ -38,7 +38,7 @@ Install dependencies
   go mod tidy
 ```
 
-Init SQLite GUI (Optional)
+Init SQLite GUI (Optional, Docker ON)
 
 ```bash
   make run-sqlite
@@ -54,7 +54,7 @@ Start the server
 Go to the **FE** project directory
 
 ```bash
-  cd ../frontend
+  cd frontend/voucher-assignments
 ```
 
 Install dependencies
@@ -73,7 +73,7 @@ Go to the Web Application
 
 -  [http://127.0.0.0:5173](http://127.0.0.0:5173)
 
-See the SQLite GUI (Optional)
+See the SQLite GUI (Optional, Docker ON)
 
 -  [http://127.0.0.0:8080](http://127.0.0.0:8080)
 
