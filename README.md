@@ -20,50 +20,50 @@ depending on aircraft type.
 
 ## Run Locally 
 
-Clone the project
+1. Clone the project
 
 ```bash
   git clone https://github.com/Nicomnr02/bookcabin-flight-voucher-assignment.git
 ```
 
-Go to the **BE** project directory
+2. Go to the **BE** project directory
 
 ```bash
   cd backend
 ```
 
-Install dependencies
+3. Install dependencies
 
 ```bash
   go mod tidy
 ```
 
-Init SQLite GUI (Optional, Docker ON)
+4. Init SQLite GUI (Optional)
 
 ```bash
   make run-sqlite
 ```
 
-Start the server
+5. Start the server
 
 ```bash
   make run-server
 ```
 
 
-Go to the **FE** project directory
+6. Go to the **FE** project directory
 
 ```bash
   cd frontend/voucher-assignments
 ```
 
-Install dependencies
+7. Install dependencies
 
 ```bash
   npm install
 ```
 
-Start the Web Application
+8. Start the Web Application
 
 ```bash
   npm run dev
