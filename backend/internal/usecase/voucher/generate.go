@@ -4,6 +4,7 @@ import (
 	voucherdomain "bookcabin-flight-voucher-assignment/internal/domain/voucher"
 	voucherdto "bookcabin-flight-voucher-assignment/internal/dto/voucher"
 	"bookcabin-flight-voucher-assignment/internal/exception"
+	"bookcabin-flight-voucher-assignment/pkg/format"
 	"bookcabin-flight-voucher-assignment/pkg/logger"
 	"context"
 	"database/sql"
@@ -14,6 +15,11 @@ import (
 )
 
 func (usecase *VoucherUsecaseImpl) Generate(c context.Context, request voucherdto.GenerateRequest) (voucherdto.GenerateResponse, error) {
+	_, err := time.Parse(format.DATEONLY, request.Date)
+	if err != nil {
+		return voucherdto.GenerateResponse{}, exception.ErrBadRequest("The date is invalid")
+	}
+
 	data := voucherdomain.Voucher{
 		FlightNumber: request.FlightNumber,
 		FlightDate:   request.Date,

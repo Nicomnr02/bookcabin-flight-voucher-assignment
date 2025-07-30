@@ -6,6 +6,7 @@ import (
 	"database/sql"
 )
 
+//go:generate mockery --name VoucherRepository --outpkg vouchermocks --output ../mocks/voucher
 type VoucherRepository interface {
 	GetVouchers(c context.Context, data voucherdomain.Voucher) ([]voucherdomain.Voucher, error)
 	CreateVoucher(c context.Context, data voucherdomain.Voucher) error
