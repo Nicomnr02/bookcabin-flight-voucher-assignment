@@ -1,8 +1,10 @@
-run:
+run-sqlite:
 	docker-compose up --build -d
 
-stop:
+stop-sqlite:
 	docker-compose down
 
+run-server:
+	go run cmd/main.go
 
 
